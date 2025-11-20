@@ -44,7 +44,7 @@ body {
 
 .nav-link {
     color: var(--maroon) !important;
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 20px;
     letter-spacing: 0.5px;
 }
@@ -62,23 +62,39 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg stroke='white' viewBox='0 0 30 30'%3E%3Cpath stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
+
+
+
+
 /* =========================================================
    HERO SECTION
 ========================================================= */
 #hero-section {
-    height: 80vh;
+    width: 100%;
+    margin: 0;
+    min-height: 80vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px 80px;
-    padding-top: 0px;
-    background: linear-gradient(135deg, #fff7fb 0%, #ffe6f2 100% );
+    padding: 140px 20px 80px; /* safer spacing */
+    background: linear-gradient(135deg, #fff7fb 0%, #ffe6f2 100%);
 }
+
+    /* Inner wrapper so hero content stays centered + same width as rest of site */
+    #hero-section .hero-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
     #hero-section img {
         border: 5px solid var(--pink);
+        width: 200px;
+        height: 200px;
+        object-fit: cover; /* PREVENTS the face from stretching */
     }
+
     #hero-section h1 {
         font-family: "Poppins", sans-serif;
         font-size: 3.5rem;
@@ -86,6 +102,7 @@ body {
         color: var(--teal);
         margin-top: 20px;
     }
+
     #hero-section p {
         margin-top: 12px;
         font-size: 1.2rem;
@@ -120,12 +137,12 @@ section h2 {
 
 
     .case-card img[alt="Field & Feast"] {
-        height: 472px;
+        height: 500px;
         object-position: top;
     }
 
     .case-card img[alt="Wunderlust Travel"] {
-        height: 524px;
+        height: 500px;
         object-position: top;
     }
 
@@ -199,8 +216,9 @@ section h2 {
     }
 
     .case-hero p {
-        font-size: 1.3rem;
-        font-weight: 200;
+
+        font-size: 1.2rem;
+        font-weight: 400;
         color: var(--pink);
     }
 
@@ -290,8 +308,8 @@ h3 {
     }
 
 .contact-form label {
-    font-size: 1.6rem;
-    font-weight: 200;
+    font-size: 1rem;
+    font-weight: 100;
     color: var(--pink);
     margin-bottom: 5px;
 }
@@ -336,70 +354,68 @@ footer {
     text-align: center;
     margin-top: 60px;
 }
-
 /* ============================
-   MEDIA QUERIES 
-============================ */
-/* ============================
-   REAL MOBILE FIXES
+   MOBILE (max-width: 600px)
 ============================ */
 @media (max-width: 600px) {
 
-    /* HERO IMAGE FIX */
+    /* HERO SECTION */
     #hero-section {
-        height: auto;
-        padding: 100px 20px 40px;
+        min-height: auto;
+        padding: 120px 20px 40px;
     }
 
         #hero-section img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* no cropping */
         }
 
         #hero-section h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         #hero-section p {
             font-size: 1rem;
         }
 
-    /* GENERIC HEADERS */
+    .hero-inner {
+        max-width: 100%;
+        margin: auto;
+    }
+
+    /* HEADERS */
     h2 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
     }
 
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
-    /* PROJECT CARDS FIX */
+    /* PROJECT CARDS */
     .case-card {
-        margin: 0 auto;
-        width: 95%;
+        width: 100%;
         padding: 15px;
+        margin-bottom: 20px;
     }
 
         .case-card h4 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-    /* CONTACT FORM FIXES */
-    .contact-form {
-        width: 100%;
-    }
-
-        .contact-form .form-control {
-            width: 100%;
-            font-size: 0.9rem;
-        }
-
-    label {
+    /* CONTACT FORM */
+    .contact-form label {
         font-size: 1rem !important;
     }
 
-    /* Reduce spacing */
+    .contact-form .form-control {
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    /* PAGE SPACING */
     section {
-        padding: 40px 10px;
+        padding: 40px 15px;
     }
 }
