@@ -375,8 +375,9 @@ footer {
 
     /* HERO SPACING FIX */
     #hero-section {
-        padding-top: 110px; /* less than before */
-        padding-bottom: 50px;
+        padding-top: 160px; /* less than before */
+        padding-bottom: 80px;
+        min-height: 100vh;
     }
 
         #hero-section img {
@@ -385,7 +386,7 @@ footer {
         }
 
         #hero-section h1 {
-            font-size: 1.9rem;
+            font-size: 1rem;
         }
 
         #hero-section p {
