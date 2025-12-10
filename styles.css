@@ -25,7 +25,9 @@ body {
 .main-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 /* =========================================================
@@ -36,6 +38,7 @@ body {
     padding-top: 4px;
     padding-bottom: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+
 }
 
 .navbar-brand img {
@@ -111,7 +114,6 @@ body {
         font-weight: 400;
         color: var(--pink);
     }
-
 
 
 /* =========================================================
@@ -398,6 +400,7 @@ footer {
         margin: auto;
     }
 
+
     /* HEADINGS */
     h2 {
         font-size: 1.8rem;
@@ -432,4 +435,10 @@ footer {
     section {
         padding: 40px 15px;
     }
+}
+/* ================================================
+   FIX FOR ANCHOR LINKS HIDING SECTIONS (Mission, Skills, Projects)
+================================================= */
+section {
+    scroll-margin-top: 480px; /* adjust based on navbar height */
 }
